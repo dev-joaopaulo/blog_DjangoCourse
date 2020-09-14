@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home Page</title>
 </head>
 <body>
-<h1>You're home</h1>
+<h1>3D Wizard Blog</h1>
+
+<h2>Latest Posts</h2>
+
+{% for post in posts.all %}
+
+{{ post.title }}
+<br/>
+{{ post.pub_date_pretty }}
+<br/>
+<img src="{{ post.image.url }}">
+<br/>
+{{ post.body }}
+<br/>
+<br/>
+{% endfor %}
+
 </body>
 </html>
