@@ -11,7 +11,9 @@
 
 {% for post in posts.all %}
 
-{{ post.title }}
+<a href="{% url 'posts_detail' post.id %}"> {{ post.title }} </a>
+<br/>
+{{ post.id }}
 <br/>
 {{ post.pub_date_pretty }}
 <br/>
