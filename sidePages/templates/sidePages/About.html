@@ -6,11 +6,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Post Content</title>
+    <title>About this blog</title>
 </head>
 <body>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="{% url 'home' %}">3D Wizard</a>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,20 +26,17 @@
           </div>
         </nav>
 
-   <div class="container">
+    <div class="container">
 
-       <h1>{{ post.title }}</h1>
+        <h1>About this Awesome Blog</h1>
 
-        <br/>
-        <br/>
-       <h2>{{ post.pub_date_pretty }}</h2>
-        <br/>
-        <img src="{{ post.image.url }}" class="img-fluid rounded mx-auto d-block"  style="max-height:600px;">
-        <br/>
-       <p>
-        {{ post.body }}
-       </p>
-   </div>
+        <p>This blog is part of the Udemy course The Ultimate Beginner's Guide to Django 1.11.</p>
+
+        {% load webp %}
+        <picture><source srcset="{% webp 'sidePages/djangoAboutImage.webp' %}" type="image/webp"></picture>
+
+
+    </div>
 
 </body>
 </html>
